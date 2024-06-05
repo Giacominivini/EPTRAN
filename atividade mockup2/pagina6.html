@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPTRAN Game</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 70px);
+        }
+
+        .game-container {
+            background-color: #d0e7ff;
+            border: 2px solid #0056b3;
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+        }
+
+        .game-header h1 {
+            background-color: #000;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .game h2 {
+            color: #000;
+        }
+
+        #game-form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        #game-form input {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        #game-form button {
+            padding: 10px 20px;
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .road-scene {
+            position: relative;
+            height: 200px;
+            background-color: #a0c4ff;
+        }
+
+        .road-signs, .road-objects, .car-scene {
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .road-signs img, .road-objects img, .car-scene img {
+            margin-right: 10px;
+        }
+
+        .road-signs {
+            left: 10px;
+        }
+
+        .road-objects {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .car-scene {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="bandeira.png" alt="EPTRAN Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Sobre o EPTRAN</a></li>
+                <li><a href="#">Nosso Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="game-container">
+            <div class="game-header">
+                <h1>Séries iniciais</h1>
+            </div>
+            <div class="game">
+                <h2>EPTRAN GAME</h2>
+                <form id="game-form">
+                    <input type="text" id="name" name="name" placeholder="Nome">
+                    <button type="submit">JOGAR</button>
+                </form>
+            </div>
+            <div class="road-scene">
+                <div class="road-signs">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                </div>
+                <div class="road-objects">
+                    <img src="" alt="">
+                    <img src="foto3.png" alt="">
+                    <img src="" alt="">
+                </div>
+                <div class="car-scene">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.getElementById('game-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const playerName = document.getElementById('name').value;
+            if (playerName) {
+                alert(`Bem-vindo ao EPTRAN GAME, ${playerName}!`);
+            } else {
+                alert('Por favor, insira seu nome.');
+            }
+        });
+    </script>
+</body>
+</html>
